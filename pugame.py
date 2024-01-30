@@ -119,7 +119,7 @@ pygame.init()
 screen = pygame.display.set_mode((800, 400))
 pygame.display.set_caption('run master')
 clock = pygame.time.Clock()
-test_font = pygame.font.Font('/Users/coxlong/Desktop/pp/graph/Pixeltype.ttf', 50)
+test_font = pygame.font.Font('/Users/coxlong/Desktop/pp/python/graph/Pixeltype.ttf', 50)
 game_active = False
 start_time = 0
 score = 0
