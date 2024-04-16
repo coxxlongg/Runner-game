@@ -5,11 +5,11 @@ from random import randint
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        player_walk1 = pygame.image.load('/Users/coxlong/Desktop/pp/graph/player_walk_1.png').convert_alpha()
-        player_walk2 = pygame.image.load('/Users/coxlong/Desktop/pp/graph/player_walk_2.png').convert_alpha()
+        player_walk1 = pygame.image.load('./images/player_walk_1.png').convert_alpha()
+        player_walk2 = pygame.image.load('./images/player_walk_2.png').convert_alpha()
         self.player_walk = [player_walk1, player_walk2]
         self.player_index = 0
-        self.player_jump = pygame.image.load('/Users/coxlong/Desktop/pp/graph/jump.png').convert_alpha()
+        self.player_jump = pygame.image.load('./images/jump.png').convert_alpha()
 
         self.image = self.player_walk[self.player_index]
         self.rect = self.image.get_rect(midbottom = (80,300))
@@ -44,13 +44,13 @@ class Obstacle(pygame.sprite.Sprite):
         super().__init__()
 
         if type == 'fly':
-            fly_1 = pygame.image.load('/Users/coxlong/Desktop/pp/graph/fly1.png').convert_alpha()
-            fly_2 = pygame.image.load('/Users/coxlong/Desktop/pp/graph/fly2.png').convert_alpha()
+            fly_1 = pygame.image.load('./images/fly1.png').convert_alpha()
+            fly_2 = pygame.image.load('./images/fly2.png').convert_alpha()
             self.frames = [fly_1, fly_2]
             y_pos = 210
         else:
-            snail_1 = pygame.image.load('/Users/coxlong/Desktop/pp/graph/snail1.png').convert_alpha()
-            snail_2 = pygame.image.load('/Users/coxlong/Desktop/pp/graph/snail2.png').convert_alpha()
+            snail_1 = pygame.image.load('./images/snail1.png').convert_alpha()
+            snail_2 = pygame.image.load('./images/snail2.png').convert_alpha()
             self.frames = [snail_1, snail_2]
             y_pos = 300
 
@@ -119,7 +119,7 @@ pygame.init()
 screen = pygame.display.set_mode((800, 400))
 pygame.display.set_caption('run master')
 clock = pygame.time.Clock()
-test_font = pygame.font.Font('/Users/coxlong/Desktop/pp/python/graph/Pixeltype.ttf', 50)
+test_font = pygame.font.Font('./images/Pixeltype.ttf', 50)
 game_active = False
 start_time = 0
 score = 0
@@ -129,36 +129,36 @@ player.add(Player())
 
 obstacle_group = pygame.sprite.Group()
 
-sky_surface = pygame.image.load('/Users/coxlong/Desktop/pp/graph/Sky.png').convert()
-ground_surface = pygame.image.load('/Users/coxlong/Desktop/pp/graph/ground.png').convert()
+sky_surface = pygame.image.load('./images/Sky.png').convert()
+ground_surface = pygame.image.load('./images/ground.png').convert()
 
 
-snail_frame1 = pygame.image.load('/Users/coxlong/Desktop/pp/graph/snail1.png').convert_alpha()
-snail_frame2 = pygame.image.load('/Users/coxlong/Desktop/pp/graph/snail2.png').convert_alpha()
+snail_frame1 = pygame.image.load('./images/snail1.png').convert_alpha()
+snail_frame2 = pygame.image.load('./images/snail2.png').convert_alpha()
 snail_frames = [snail_frame1, snail_frame2]
 snail_frame_index = 0
 snail_surf = snail_frames[snail_frame_index]
 
-fly_frame1 = pygame.image.load('/Users/coxlong/Desktop/pp/graph/fly1.png').convert_alpha()
-fly_frame2 = pygame.image.load('/Users/coxlong/Desktop/pp/graph/fly2.png').convert_alpha()
+fly_frame1 = pygame.image.load('./images/fly1.png').convert_alpha()
+fly_frame2 = pygame.image.load('./images/fly2.png').convert_alpha()
 fly_frames = [fly_frame1, fly_frame2]
 fly_frame_index = 0
 fly_surf = fly_frames[fly_frame_index]
 
 obstacle_rect_list = []
 
-player_walk1 = pygame.image.load('/Users/coxlong/Desktop/pp/graph/player_walk_1.png').convert_alpha()
-player_walk2 = pygame.image.load('/Users/coxlong/Desktop/pp/graph/player_walk_2.png').convert_alpha()
+player_walk1 = pygame.image.load('./images/player_walk_1.png').convert_alpha()
+player_walk2 = pygame.image.load('./images/player_walk_2.png').convert_alpha()
 player_walk = [player_walk1, player_walk2]
 player_index= 0
-player_jump = pygame.image.load('/Users/coxlong/Desktop/pp/graph/jump.png').convert_alpha()
+player_jump = pygame.image.load('./images/jump.png').convert_alpha()
 
 player_surf = player_walk[player_index]
 player_rect = player_surf.get_rect(midbottom = (80,300))
 player_gravity = 0
 
 #intro
-player_stand = pygame.image.load('/Users/coxlong/Desktop/pp/graph/player_stand.png').convert_alpha()
+player_stand = pygame.image.load('./images/player_stand.png').convert_alpha()
 player_stand_scaled = pygame.transform.rotozoom(player_stand,0,2)
 player_stand_rect = player_stand_scaled.get_rect(center = (400,200))
 
